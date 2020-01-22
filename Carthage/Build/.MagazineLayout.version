@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "v1.5.2",
+  "iOS" : [
+    {
+      "name" : "MagazineLayout",
+      "hash" : "2ad746d9f92c96844790a56466785d253de71f0b2e25ffa64060254bc0c08f61",
+      "swiftToolchainVersion" : "5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+    }
+  ]
+}

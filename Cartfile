@@ -1,0 +1,5 @@
+#Require SnapKit 5.0.x 
+github "SnapKit/SnapKit" ~> 5.0.0
+#Require latest MagazineLayout
+github "airbnb/MagazineLayout"
+

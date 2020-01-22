@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		955B2CD623C1630600CC6764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD523C1630600CC6764 /* AppDelegate.swift */; };
 		955B2CD823C1630600CC6764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD723C1630600CC6764 /* SceneDelegate.swift */; };
-		955B2CDA23C1630600CC6764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD923C1630600CC6764 /* ViewController.swift */; };
-		955B2CDD23C1630600CC6764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955B2CDB23C1630600CC6764 /* Main.storyboard */; };
+		955B2CDA23C1630600CC6764 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD923C1630600CC6764 /* MainViewController.swift */; };
 		955B2CDF23C1630800CC6764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955B2CDE23C1630800CC6764 /* Assets.xcassets */; };
 		955B2CE223C1630800CC6764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955B2CE023C1630800CC6764 /* LaunchScreen.storyboard */; };
 		955B2CED23C1630800CC6764 /* PrimerTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CEC23C1630800CC6764 /* PrimerTutorialTests.swift */; };
 		955B2CF823C1630900CC6764 /* PrimerTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CF723C1630900CC6764 /* PrimerTutorialUITests.swift */; };
+		955B2D0823C1670A00CC6764 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0623C1670A00CC6764 /* SnapKit.framework */; };
+		955B2D0923C1670A00CC6764 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0623C1670A00CC6764 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		955B2D0A23C1670A00CC6764 /* MagazineLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0723C1670A00CC6764 /* MagazineLayout.framework */; };
+		955B2D0B23C1670A00CC6764 /* MagazineLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0723C1670A00CC6764 /* MagazineLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		956D60D023C21A000075A4D9 /* PostViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D60CF23C21A000075A4D9 /* PostViewCollectionViewCell.swift */; };
+		95DD264123CECE4100AD5420 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD264023CECE4100AD5420 /* DesignSystem.swift */; };
+		95DD264323CECE7A00AD5420 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD264223CECE7A00AD5420 /* Labels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +40,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		955B2D0C23C1670A00CC6764 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				955B2D0B23C1670A00CC6764 /* MagazineLayout.framework in Embed Frameworks */,
+				955B2D0923C1670A00CC6764 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		955B2CD223C1630600CC6764 /* PrimerTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimerTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955B2CD523C1630600CC6764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955B2CD723C1630600CC6764 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		955B2CD923C1630600CC6764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		955B2CDC23C1630600CC6764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		955B2CD923C1630600CC6764 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		955B2CDE23C1630800CC6764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955B2CE123C1630800CC6764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955B2CE323C1630800CC6764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +69,11 @@
 		955B2CF323C1630800CC6764 /* PrimerTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimerTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955B2CF723C1630900CC6764 /* PrimerTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimerTutorialUITests.swift; sourceTree = "<group>"; };
 		955B2CF923C1630900CC6764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955B2D0623C1670A00CC6764 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		955B2D0723C1670A00CC6764 /* MagazineLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagazineLayout.framework; path = Carthage/Build/iOS/MagazineLayout.framework; sourceTree = "<group>"; };
+		956D60CF23C21A000075A4D9 /* PostViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		95DD264023CECE4100AD5420 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		95DD264223CECE7A00AD5420 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955B2D0A23C1670A00CC6764 /* MagazineLayout.framework in Frameworks */,
+				955B2D0823C1670A00CC6764 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +110,7 @@
 				955B2CEB23C1630800CC6764 /* PrimerTutorialTests */,
 				955B2CF623C1630900CC6764 /* PrimerTutorialUITests */,
 				955B2CD323C1630600CC6764 /* Products */,
+				955B2D0523C1670A00CC6764 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +127,12 @@
 		955B2CD423C1630600CC6764 /* PrimerTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				95DD263F23CECDA800AD5420 /* UIElements */,
+				95DD263E23CECD9A00AD5420 /* Extensions */,
+				956D60CE23C219E70075A4D9 /* View */,
 				955B2CD523C1630600CC6764 /* AppDelegate.swift */,
 				955B2CD723C1630600CC6764 /* SceneDelegate.swift */,
-				955B2CD923C1630600CC6764 /* ViewController.swift */,
-				955B2CDB23C1630600CC6764 /* Main.storyboard */,
+				955B2CD923C1630600CC6764 /* MainViewController.swift */,
 				955B2CDE23C1630800CC6764 /* Assets.xcassets */,
 				955B2CE023C1630800CC6764 /* LaunchScreen.storyboard */,
 				955B2CE323C1630800CC6764 /* Info.plist */,
@@ -128,6 +158,39 @@
 			path = PrimerTutorialUITests;
 			sourceTree = "<group>";
 		};
+		955B2D0523C1670A00CC6764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				955B2D0723C1670A00CC6764 /* MagazineLayout.framework */,
+				955B2D0623C1670A00CC6764 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		956D60CE23C219E70075A4D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				956D60CF23C21A000075A4D9 /* PostViewCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95DD263E23CECD9A00AD5420 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95DD263F23CECDA800AD5420 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				95DD264023CECE4100AD5420 /* DesignSystem.swift */,
+				95DD264223CECE7A00AD5420 /* Labels.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +201,7 @@
 				955B2CCE23C1630600CC6764 /* Sources */,
 				955B2CCF23C1630600CC6764 /* Frameworks */,
 				955B2CD023C1630600CC6764 /* Resources */,
+				955B2D0C23C1670A00CC6764 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,7 +298,6 @@
 			files = (
 				955B2CE223C1630800CC6764 /* LaunchScreen.storyboard in Resources */,
 				955B2CDF23C1630800CC6764 /* Assets.xcassets in Resources */,
-				955B2CDD23C1630600CC6764 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955B2CDA23C1630600CC6764 /* ViewController.swift in Sources */,
+				955B2CDA23C1630600CC6764 /* MainViewController.swift in Sources */,
+				95DD264123CECE4100AD5420 /* DesignSystem.swift in Sources */,
+				95DD264323CECE7A00AD5420 /* Labels.swift in Sources */,
 				955B2CD623C1630600CC6764 /* AppDelegate.swift in Sources */,
+				956D60D023C21A000075A4D9 /* PostViewCollectionViewCell.swift in Sources */,
 				955B2CD823C1630600CC6764 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		955B2CDB23C1630600CC6764 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				955B2CDC23C1630600CC6764 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		955B2CE023C1630800CC6764 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,6 +494,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MT7DH3FAZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PrimerTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +516,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MT7DH3FAZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PrimerTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
