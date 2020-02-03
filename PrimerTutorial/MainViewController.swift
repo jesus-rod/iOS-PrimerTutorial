@@ -12,12 +12,13 @@ import MagazineLayout
 
 class MainViewController: UIViewController, UICollectionViewDataSource {
 
-    let examplePosts: [PostCollectionViewCell.ViewModel] = [
-        PostCollectionViewCell.ViewModel(title: "Busco perro", subtitle: "Tengo ganas de adoptar un perrito", postedBy: "Jesus"),
-        PostCollectionViewCell.ViewModel(title: "Busco gato", subtitle: "Tengo ganas de adoptar un gatito", postedBy: "Maria"),
-        PostCollectionViewCell.ViewModel(title: "Busco canario", subtitle: "Tengo ganas de adoptar un canarito", postedBy: "Pedro"),
-        PostCollectionViewCell.ViewModel(title: "Busco camello", subtitle: "Tengo ganas de adoptar un camellito", postedBy: "Jose")
-    ]
+    let networkClient = NetworkClient.shared
+
+    var fetchedPosts: [Post] = [Post]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     private lazy var collectionView: UICollectionView = {
         let layout = MagazineLayout()
@@ -29,12 +30,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     }()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return examplePosts.count
+        return fetchedPosts.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
-        cell.set(examplePosts[indexPath.item])
+        let viewModel = PostCollectionViewCell.ViewModel(title: fetchedPosts[indexPath.item].title, subtitle: fetchedPosts[indexPath.item].body, postedBy: fetchedPosts[indexPath.item].postedBy)
+        cell.set(viewModel)
         return cell
     }
 
@@ -44,6 +46,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         view.backgroundColor = .white
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         setupCollectionView()
+        let task = networkClient.getLatestPosts { (posts, error) in
+            if let error = error {
+                // mostrar alerta y decir que hubo un error
+            }
+
+            print(posts)
+            self.fetchedPosts = posts ?? [Post]()
+        }
     }
 
     private func setupCollectionView() {
