@@ -70,7 +70,7 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
     private func setupMainStackView() {
         addSubview(mainStackView)
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(8)
         }
     }
 
@@ -95,7 +95,8 @@ class PostCollectionViewCell: MagazineLayoutCollectionViewCell {
     }
 
     private func setupStyles() {
-        backgroundColor = .lightGray
+        subtitleLabel.numberOfLines = 0
+        backgroundColor = Colors.secondaryBackgroundColor
         layer.cornerRadius = 5
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 3)

@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/jrodriguez/Code/Mis Tutoriales/PrimerTutorial/Carthage/Checkouts/SnapKit/target/DerivedData/Build/Intermediates.noindex/ArchiveIntermediates/SnapKit/BuildProductsPath/Release-appletvos/SnapKit.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/jrodriguez/Code/Mis Tutoriales/PrimerTutorial/Carthage/Checkouts/SnapKit/target/DerivedData/Build/Intermediates.noindex/ArchiveIntermediates/SnapKit/IntermediateBuildFilesPath/SnapKit.build/Release-appletvos/SnapKit.build/unextended-module.modulemap",
+    }]
+  }]
+}

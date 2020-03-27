@@ -334,6 +334,7 @@ public final class MagazineLayout: UICollectionViewLayout {
     }
 
     modelState.applyUpdates(updates)
+    hasDataSourceCountInvalidationBeforeReceivingUpdateItems = false
 
     super.prepare(forCollectionViewUpdates: updateItems)
   }
@@ -351,6 +352,30 @@ public final class MagazineLayout: UICollectionViewLayout {
     in rect: CGRect)
     -> [UICollectionViewLayoutAttributes]?
   {
+    // This early return prevents an issue that causes overlapping / misplaced elements after an
+    // off-screen batch update occurs. The root cause of this issue is that `UICollectionView`
+    // expects `layoutAttributesForElementsInRect:` to return post-batch-update layout attributes
+    // immediately after an update is sent to the collection view via the insert/delete/reload/move
+    // functions. Unfortunately, this is impossible - when batch updates occur, `invalidateLayout:`
+    // is invoked immediately with a context that has `invalidateDataSourceCounts` set to `true`.
+    // At this time, `MagazineLayout` has no way of knowing the details of this data source count
+    // change (where the insert/delete/move took place). `MagazineLayout` only gets this additional
+    // information once `prepareForCollectionViewUpdates:` is invoked. At that time, we're able to
+    // update our layout's source of truth, the `ModelState`, which allows us to resolve the
+    // post-batch-update layout and return post-batch-update layout attributes from this function.
+    // Between the time that `invalidateLayout:` is invoked with `invalidateDataSourceCounts` set to
+    // `true`, and when `prepareForCollectionViewUpdates:` is invoked with details of the updates,
+    // `layoutAttributesForElementsInRect:` is invoked with the expectation that we already have a
+    // fully resolved layout. If we return incorrect layout attributes at that time, then we'll have
+    // overlapping elements / visual defects. To prevent this, we can return `nil` in this
+    // situation, which works around the bug.
+    // `UICollectionViewCompositionalLayout`, in classic UIKit fashion, avoids this bug / feature by
+    // implementing the private function
+    // `_prepareForCollectionViewUpdates:withDataSourceTranslator:`, which provides the layout with
+    // details about the updates to the collection view before `layoutAttributesForElementsInRect:`
+    // is invoked, enabling them to resolve their layout in time.
+    guard !hasDataSourceCountInvalidationBeforeReceivingUpdateItems else { return nil }
+
     var layoutAttributesInRect = [UICollectionViewLayoutAttributes]()
 
     let headerLocationFramePairs = modelState.headerLocationFramePairs(forHeadersIn: rect)
@@ -364,7 +389,6 @@ public final class MagazineLayout: UICollectionViewLayout {
 
       layoutAttributes.frame = headerFrame
       layoutAttributesInRect.append(layoutAttributes)
-
     }
 
     let footerLocationFramePairs = modelState.footerLocationFramePairs(forFootersIn: rect)
@@ -414,6 +438,9 @@ public final class MagazineLayout: UICollectionViewLayout {
     at indexPath: IndexPath)
     -> UICollectionViewLayoutAttributes?
   {
+    // See comment in `layoutAttributesForElementsInRect:` for more details.
+    guard !hasDataSourceCountInvalidationBeforeReceivingUpdateItems else { return nil }
+
     let itemLocation = ElementLocation(indexPath: indexPath)
     let layoutAttributes = itemLayoutAttributes[itemLocation]
 
@@ -441,6 +468,9 @@ public final class MagazineLayout: UICollectionViewLayout {
     at indexPath: IndexPath)
     -> UICollectionViewLayoutAttributes?
   {
+    // See comment in `layoutAttributesForElementsInRect:` for more details.
+    guard !hasDataSourceCountInvalidationBeforeReceivingUpdateItems else { return nil }
+
     let elementLocation = ElementLocation(indexPath: indexPath)
     if
       elementKind == MagazineLayout.SupplementaryViewKind.sectionHeader,
@@ -746,6 +776,9 @@ public final class MagazineLayout: UICollectionViewLayout {
       prepareActions.formUnion(.lazilyCreateLayoutAttributes)
     }
 
+    hasDataSourceCountInvalidationBeforeReceivingUpdateItems = context.invalidateDataSourceCounts &&
+      !context.invalidateEverything
+
     // Checking `cachedCollectionViewWidth != collectionView?.bounds.size.width` is necessary
     // because the collection view's width can change without a `contentSizeAdjustment` occuring.
     if
@@ -812,6 +845,13 @@ public final class MagazineLayout: UICollectionViewLayout {
   }
   private var prepareActions: PrepareActions = []
 
+  // Used to prevent a collection view bug / animation issue that occurs when off-screen batch
+  // updates cause changes to the elements in the visible region. See comment in
+  // `layoutAttributesForElementsInRect:` for more details.
+  private var hasDataSourceCountInvalidationBeforeReceivingUpdateItems = false
+
+  // Used to provide the model state with the current visible bounds for the sole purpose of
+  // supporting pinned headers and footers.
   private var currentVisibleBounds: CGRect {
     let contentInset: UIEdgeInsets
     if #available(iOS 11.0, *) {
@@ -820,11 +860,21 @@ public final class MagazineLayout: UICollectionViewLayout {
       contentInset = currentCollectionView.contentInset
     }
 
+    let refreshControlHeight: CGFloat
+    if
+      let refreshControl = currentCollectionView.refreshControl,
+      refreshControl.isRefreshing
+    {
+      refreshControlHeight = refreshControl.bounds.height
+    } else {
+      refreshControlHeight = 0
+    }
+
     return CGRect(
       x: currentCollectionView.bounds.minX + contentInset.left,
-      y: currentCollectionView.bounds.minY + contentInset.top,
+      y: currentCollectionView.bounds.minY + contentInset.top - refreshControlHeight,
       width: currentCollectionView.bounds.width - contentInset.left - contentInset.right,
-      height: currentCollectionView.bounds.height - contentInset.top - contentInset.bottom)
+      height: currentCollectionView.bounds.height - contentInset.top - contentInset.bottom + refreshControlHeight)
   }
 
   private var delegateMagazineLayout: UICollectionViewDelegateMagazineLayout? {

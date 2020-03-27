@@ -8,12 +8,12 @@
   "tvOS" : [
 
   ],
-  "commitish" : "v1.5.2",
+  "commitish" : "v1.5.5",
   "iOS" : [
     {
       "name" : "MagazineLayout",
-      "hash" : "2ad746d9f92c96844790a56466785d253de71f0b2e25ffa64060254bc0c08f61",
-      "swiftToolchainVersion" : "5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+      "hash" : "07f7838222f7b6cc3bbf2983b977bbabc84f6c61a65fa60b15dc5ab87def11d4",
+      "swiftToolchainVersion" : "5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)"
     }
   ]
 }

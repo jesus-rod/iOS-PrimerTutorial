@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		950A9A6723E7438B0093D682 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A9A6623E7438B0093D682 /* Post.swift */; };
 		950A9A6A23E7440A0093D682 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A9A6923E7440A0093D682 /* NetworkingClient.swift */; };
+		9557CF3A242BD5B50001131E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557CF39242BD5B50001131E /* UIColor+Hex.swift */; };
+		9557CF3C242BD6180001131E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557CF3B242BD6180001131E /* Colors.swift */; };
 		955B2CD623C1630600CC6764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD523C1630600CC6764 /* AppDelegate.swift */; };
 		955B2CD823C1630600CC6764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD723C1630600CC6764 /* SceneDelegate.swift */; };
 		955B2CDA23C1630600CC6764 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B2CD923C1630600CC6764 /* MainViewController.swift */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		950A9A6623E7438B0093D682 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		950A9A6923E7440A0093D682 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
+		9557CF39242BD5B50001131E /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9557CF3B242BD6180001131E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		955B2CD223C1630600CC6764 /* PrimerTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimerTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955B2CD523C1630600CC6764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955B2CD723C1630600CC6764 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		95DD263E23CECD9A00AD5420 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9557CF39242BD5B50001131E /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			children = (
 				95DD264023CECE4100AD5420 /* DesignSystem.swift */,
 				95DD264223CECE7A00AD5420 /* Labels.swift */,
+				9557CF3B242BD6180001131E /* Colors.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -345,8 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				950A9A6A23E7440A0093D682 /* NetworkingClient.swift in Sources */,
+				9557CF3C242BD6180001131E /* Colors.swift in Sources */,
 				955B2CDA23C1630600CC6764 /* MainViewController.swift in Sources */,
 				95DD264123CECE4100AD5420 /* DesignSystem.swift in Sources */,
+				9557CF3A242BD5B50001131E /* UIColor+Hex.swift in Sources */,
 				95DD264323CECE7A00AD5420 /* Labels.swift in Sources */,
 				955B2CD623C1630600CC6764 /* AppDelegate.swift in Sources */,
 				956D60D023C21A000075A4D9 /* PostViewCollectionViewCell.swift in Sources */,

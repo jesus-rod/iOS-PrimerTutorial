@@ -25,7 +25,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = Colors.backgroundColor
         return collectionView
     }()
 
@@ -43,17 +43,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        setupNavigationBar()
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         setupCollectionView()
         let task = networkClient.getLatestPosts { (posts, error) in
             if let error = error {
                 // mostrar alerta y decir que hubo un error
             }
-
-            print(posts)
             self.fetchedPosts = posts ?? [Post]()
         }
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Mi app!"
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "pen_paper"), for: .normal)
+        button.addTarget(self, action: #selector(presentLoginAndSignup), for: .touchUpInside)
+        button.tintColor = Colors.primaryColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        button.snp.makeConstraints { (make) in
+            make.size.equalTo(24)
+        }
+    }
+
+    @objc private func presentLoginAndSignup() {
+        print("123")
     }
 
     private func setupCollectionView() {
