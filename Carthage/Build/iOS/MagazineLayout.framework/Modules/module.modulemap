@@ -1,4 +1,0 @@
-framework module MagazineLayout {
-  header "MagazineLayout-Swift.h"
-  requires objc
-}
