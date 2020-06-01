@@ -67,7 +67,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     }
 
     @objc private func presentLoginAndSignup() {
-        print("123")
+        let onboardingVC = OnboardingViewController()
+        present(onboardingVC, animated: true, completion: nil)
     }
 
     private func setupCollectionView() {
@@ -109,7 +110,7 @@ extension MainViewController: UICollectionViewDelegateMagazineLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForSectionAtIndex index: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 60, left: 0, bottom: 30, right: 0)
+        UIEdgeInsets(top: 10, left: 0, bottom: 30, right: 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForItemsInSectionAtIndex index: Int) -> UIEdgeInsets {
