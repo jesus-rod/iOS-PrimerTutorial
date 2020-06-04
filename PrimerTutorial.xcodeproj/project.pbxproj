@@ -23,10 +23,8 @@
 		955B2D0A23C1670A00CC6764 /* MagazineLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0723C1670A00CC6764 /* MagazineLayout.framework */; };
 		955B2D0B23C1670A00CC6764 /* MagazineLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955B2D0723C1670A00CC6764 /* MagazineLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		956D60D023C21A000075A4D9 /* PostViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D60CF23C21A000075A4D9 /* PostViewCollectionViewCell.swift */; };
-		957648762484F87500D9568B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957648752484F87500D9568B /* OnboardingViewController.swift */; };
 		957648782484FADD00D9568B /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957648772484FADD00D9568B /* PrimaryButton.swift */; };
 		9576487A2484FB8D00D9568B /* DesignSystemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957648792484FB8D00D9568B /* DesignSystemConstants.swift */; };
-		9576487C2485025900D9568B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576487B2485025900D9568B /* SignUpViewController.swift */; };
 		95DD264123CECE4100AD5420 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD264023CECE4100AD5420 /* DesignSystem.swift */; };
 		95DD264323CECE7A00AD5420 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD264223CECE7A00AD5420 /* Labels.swift */; };
 /* End PBXBuildFile section */
@@ -84,10 +82,8 @@
 		955B2D0623C1670A00CC6764 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		955B2D0723C1670A00CC6764 /* MagazineLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagazineLayout.framework; path = Carthage/Build/iOS/MagazineLayout.framework; sourceTree = "<group>"; };
 		956D60CF23C21A000075A4D9 /* PostViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCollectionViewCell.swift; sourceTree = "<group>"; };
-		957648752484F87500D9568B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		957648772484FADD00D9568B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		957648792484FB8D00D9568B /* DesignSystemConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemConstants.swift; sourceTree = "<group>"; };
-		9576487B2485025900D9568B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		95DD264023CECE4100AD5420 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		95DD264223CECE7A00AD5420 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,8 +162,6 @@
 				956D60CE23C219E70075A4D9 /* View */,
 				955B2CD523C1630600CC6764 /* AppDelegate.swift */,
 				955B2CD723C1630600CC6764 /* SceneDelegate.swift */,
-				9576487B2485025900D9568B /* SignUpViewController.swift */,
-				957648752484F87500D9568B /* OnboardingViewController.swift */,
 				955B2CD923C1630600CC6764 /* MainViewController.swift */,
 				955B2CDE23C1630800CC6764 /* Assets.xcassets */,
 				955B2CE023C1630800CC6764 /* LaunchScreen.storyboard */,
@@ -370,11 +364,9 @@
 				95DD264323CECE7A00AD5420 /* Labels.swift in Sources */,
 				957648782484FADD00D9568B /* PrimaryButton.swift in Sources */,
 				955B2CD623C1630600CC6764 /* AppDelegate.swift in Sources */,
-				9576487C2485025900D9568B /* SignUpViewController.swift in Sources */,
 				956D60D023C21A000075A4D9 /* PostViewCollectionViewCell.swift in Sources */,
 				950A9A6723E7438B0093D682 /* Post.swift in Sources */,
 				9576487A2484FB8D00D9568B /* DesignSystemConstants.swift in Sources */,
-				957648762484F87500D9568B /* OnboardingViewController.swift in Sources */,
 				955B2CD823C1630600CC6764 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -67,8 +67,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     }
 
     @objc private func presentLoginAndSignup() {
-        let onboardingVC = OnboardingViewController()
-        present(onboardingVC, animated: true, completion: nil)
+        //Comenzamos aqui
     }
 
     private func setupCollectionView() {
