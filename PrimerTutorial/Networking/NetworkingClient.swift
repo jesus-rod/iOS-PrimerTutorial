@@ -17,7 +17,7 @@ class NetworkClient {
     let responseQueue: DispatchQueue
 
     //singleton
-    static let shared = NetworkClient(baseURL: URL(string: "http://devpragmatico.com/primertutorial/")!,
+    static let shared = NetworkClient(baseURL: URL(string: "http://devpragmatico.com:3000/primertutorial/")!,
                                       session: .shared,
                                       responseQueue: .main)
 
